@@ -46,7 +46,7 @@
     <a href="https://saythanks.io/to/nisrulz">
         <img src="https://img.shields.io/badge/Say%20Thanks-!-1EAEDB.svg"/>
     </a>
-    <a href="https://www.paypal.me/nisrulz/5">
+    <a href="https://www.paypal.me/nisrulz/5usd">
         <img src="https://img.shields.io/badge/$-donate-ff69b4.svg?maxAge=2592000&amp;style=flat">
     </a>
     <br/>
@@ -76,18 +76,32 @@
 <br/>
 <br/>
 
+
+> Note: Development for pre-androidx version of this library has stopped. If you are looking for [pre-androidx version, then checkout this branch.](https://github.com/nisrulz/recyclerviewhelper/tree/archive/pre-androidx)
+> Library is compatible with AndroidX version only.
+
 # Integration
 RecyclerViewHelper is available in the Jcenter, so getting it as simple as adding it as a dependency
 ```gradle
-def supportLibVersion="{latest version}"
+def recyclerViewVersion="{latest version}"
 // Required
-implementation "com.android.support:appcompat-v7:${supportLibVersion}"
-implementation "com.android.support:recyclerview-v7:${supportLibVersion}"
+implementation "androidx.recyclerview:recyclerview:${recyclerViewVersion}"
 
 // RecyclerViewHelper
-implementation "com.github.nisrulz:recyclerviewhelper:${supportLibVersion}"
+implementation "com.github.nisrulz:recyclerviewhelper:x${recyclerViewVersion}"
 ```
-where `{latest version}` corresponds to published version in [ ![Download](https://api.bintray.com/packages/nisrulz/maven/com.github.nisrulz%3Arecyclerviewhelper/images/download.svg) ](https://bintray.com/nisrulz/maven/com.github.nisrulz%3Arecyclerviewhelper/_latestVersion)
+where `{latest version}` corresponds to published version in [ ![Download](https://api.bintray.com/packages/nisrulz/maven/com.github.nisrulz%3Arecyclerviewhelper/images/download.svg) ](https://bintray.com/nisrulz/maven/com.github.nisrulz%3Arecyclerviewhelper/_latestVersion) without the prepended `x`.
+ This is done to distinguish between library using andoirdx vs pre-androidx.
+
+Usage Example:
+```gradle
+def recyclerViewVersion="1.1.0"
+// Required
+implementation "androidx.recyclerview:recyclerview:${recyclerViewVersion}"
+
+// RecyclerViewHelper
+implementation "com.github.nisrulz:recyclerviewhelper:x${recyclerViewVersion}"
+```
 
 > NOTE : The version here corresponds to the version of recyclerview dependency.
 
@@ -216,8 +230,12 @@ I welcome and encourage all pull requests. It usually will take me within 24-48 
   2. If its a feature, bugfix, or anything please only change code to what you specify.
   3. Please keep PR titles easy to read and descriptive of changes, this will make them easier to merge :)
   4. Pull requests _must_ be made against `develop` branch. Any other branch (unless specified by the maintainers) will get rejected.
-  5. Check for existing [issues](https://github.com/nisrulz/recyclerviewhelper/issues) first, before filing an issue.  
+  5. Check for existing [issues](https://github.com/nisrulz/recyclerviewhelper/issues) first, before filing an issue.
   6. Have fun!
+
+
+## License
+Licensed under the Apache License, Version 2.0, [click here for the full license](/LICENSE.txt).
 
 ## Author & support
 This project was created by [Nishant Srivastava](https://github.com/nisrulz/nisrulz.github.io#nishant-srivastava) but hopefully developed and maintained by many others. See the [the list of contributors here](https://github.com/nisrulz/recyclerviewhelper/graphs/contributors).
@@ -227,11 +245,6 @@ This project was created by [Nishant Srivastava](https://github.com/nisrulz/nisr
 >This library contains a modified version of his implementations of ItemTouchHelper.
 <br/>
 
-> If you appreciate my work, consider buying me a cup of :coffee: to keep me recharged :metal:
->  + [PayPal](https://www.paypal.me/nisrulz/5)
->  + Bitcoin Address: 13PjuJcfVW2Ad81fawqwLtku4bZLv1AxCL
->
-> I love using my work and I'm available for contract work. Freelancing helps to maintain and keep [my open source projects](https://github.com/nisrulz/) up to date!
+If you appreciate my work, consider [buying me](https://www.paypal.me/nisrulz/5usd) a cup of :coffee: to keep me recharged :metal: [[PayPal](https://www.paypal.me/nisrulz/5usd)]
 
 <img src="http://forthebadge.com/images/badges/built-for-android.svg" />
-

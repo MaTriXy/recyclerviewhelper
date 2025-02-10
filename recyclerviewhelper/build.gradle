@@ -16,28 +16,10 @@
 
 apply plugin: 'com.android.library'
 
-android {
-    compileSdkVersion rootProject.ext.compileSdkVersion
-
-    defaultConfig {
-        minSdkVersion rootProject.ext.minSdkVersion
-        targetSdkVersion rootProject.ext.targetSdkVersion
-        versionCode rootProject.ext.libVersionCode
-        versionName rootProject.ext.libVersionName
-    }
-    buildTypes {
-        release {
-            minifyEnabled false
-            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
-        }
-    }
-}
+// Configs
+apply from: "$rootProject.projectDir/configs/common.gradle"
+apply from: "$rootProject.projectDir/configs/library.gradle"
 
 dependencies {
-    implementation fileTree(dir: 'libs', include: ['*.jar'])
-    testImplementation 'junit:junit:4.12'
-    compileOnly "com.android.support:appcompat-v7:${rootProject.ext.supportLibVersion}"
-    compileOnly "com.android.support:recyclerview-v7:${rootProject.ext.supportLibVersion}"
+    compileOnly Dependencies.recyclerView
 }
-
-apply from: 'https://raw.githubusercontent.com/nisrulz/JCenter/master/nishant-config.gradle'
